@@ -67,6 +67,8 @@ class AgendaController extends Controller
     public function store(Request $request)
     {
         //
+        /* dd($request); */
+        return "Exito";
     }
 
     /**

@@ -19,5 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/agenda',"AgendaController@index");
+Route::post('/agenda',"AgendaController@store");
 Route::get('/medico',"MedicoController@index");
 Route::get('/consultorio/{id}',"ConsultorioController@show");
