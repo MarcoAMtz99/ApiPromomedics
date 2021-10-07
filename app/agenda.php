@@ -8,6 +8,7 @@ class agenda extends Model
 {
     //
     protected $table ='agenda'; 
+    public $timestamps = false;
     protected $fillable = [
             'ID',
             'id_medico',

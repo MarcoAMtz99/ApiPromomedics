@@ -67,8 +67,41 @@ class AgendaController extends Controller
     public function store(Request $request)
     {
         //
-       /*  dd($request->data); */
-        return json_encode($request->data);
+        
+        $Fecha = Carbon::now();
+        $CITA = new Agenda();
+        $aux= $request->data["hora"].":00";
+        /* return json_encode( $request->data ) ; */
+        $CITA->id_medico = $request->data["medico"];
+        $CITA->status = 1;
+        $CITA->fechaCreacion =  $Fecha;
+        $CITA->fechaActualizacion =  $Fecha;
+        $CITA->usuarioCreacionId = 1;
+        $CITA->usuarioActualizacionId = 1;
+        $CITA->id_consultorio = $request->data["consultorio"];
+        $CITA->paciente = $request->data["paciente"];
+        $CITA->fecha_consulta = $request->data["fecha"];
+        $CITA->hora_consulta = $aux;
+        $CITA->aseguradora = 'GNP';
+        $CITA->mail = 'prueba@prueba.com';
+        $CITA->telefono1 = $request->data["telefono1"];
+        $CITA->telefono2 = $request->data["telefono2"];
+        $CITA->telefono3 = $request->data["telefono3"];
+        $CITA->consultaPrimeraVez = 0;
+        $CITA->consultaSubsecuente = 0;
+        $CITA->consultaPreferencial1 = 0;
+        $CITA->consultaPreferencial2 = 0;
+        $CITA->consultaRevision = 0;
+        $CITA->consultaEstudios = 0;
+        $CITA->consultaUrgencia = 0;
+        $CITA->costoConsulta = $request->data["costo"];
+        $CITA->recado = $request->data["recado"];
+        $CITA->comoSeEntero = "internet";
+        $CITA->edad = $request->data["edad"];
+        $CITA->tutor = "PRUEBA";
+        $CITA->save();
+
+        return json_encode( array('msg'=>"se guardo correctamente") ) ;
     }
 
     /**
