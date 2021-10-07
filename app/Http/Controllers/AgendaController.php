@@ -14,7 +14,25 @@ class AgendaController extends Controller
     public function index()
     {     
         $agenda = Agenda::all();
-        return json_encode($agenda);
+        $Citas =[];
+       foreach($agenda as $item){
+        $aux = array(
+            'id'=>$item->id,
+            'title'=>$item->paciente,
+            'start'=>$item->fecha_consulta,
+            'hora_consulta'=>$item->hora_consulta,
+            'aseguradora'=>$item->aseguradora,
+            'telefono1'=>$item->telefono1,
+            'telefono2'=>$item->telefono2,
+            'telefono3'=>$item->telefono3,
+            'costoConsulta'=>$item->costoConsulta,
+            'recado'=>$item->recado,
+            'edad'=>$item->edad,
+            'comoSeEntero'=>$item->comoSeEntero
+
+        );
+        array_push($Citas,$aux);
+        return json_encode($Citas);
         /* response()->json([ 'medicos' => $agenda], 200); */
     }
 
