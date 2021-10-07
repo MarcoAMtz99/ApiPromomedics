@@ -39,6 +39,7 @@ class ConsultorioController extends Controller
     public function store(Request $request)
     {
         //
+        
     }
 
     /**

@@ -34,6 +34,7 @@ class AgendaController extends Controller
         array_push($Citas,$aux);
         return json_encode($Citas);
         /* response()->json([ 'medicos' => $agenda], 200); */
+            }
     }
 
     /**
