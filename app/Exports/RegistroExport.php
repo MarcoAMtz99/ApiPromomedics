@@ -16,25 +16,25 @@ class RegistroExport implements FromCollection, WithHeadings, WithTitle
     public function collection()
     {     //
         // $registro = Registro::get();
-         $QUERY = $users = DB::table('registros')->select('id', 'nombre','apellidos','celular','correo','telefono','empresa','puesto')->get();
+         $QUERY = $users = DB::table('registros')->select('id', 'venta_id','monto','cuenta','beneficiario','referencia','clave','banco')->get();
            return  $QUERY;
     }
     public function headings(): array
     {
         return [
             'Id',
-            'Nombre',
-            'Apellidos',
-            'Celular / Whatsapp',
-            'Correo',
-            'Telefono',
-            'Empresa',
-            'Puesto',
+            'venta_id',
+            'monto',
+            'cuenta',
+            'beneficiario',
+            'referencia',
+            'clave',
+            'banco',
             
         ];
     }
     public function title(): string
     {
-        return 'Registros_webinar';
+        return 'Devoluciones';
     }
 }
