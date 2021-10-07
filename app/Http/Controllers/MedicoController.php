@@ -15,7 +15,8 @@ class MedicoController extends Controller
     {
         //
         $medico = medico::all();
-        return $medico;
+        response()->json(['success' => true, 'medicos' => $medico], 200);
+       /*  return $medico; */
     }
 
     /**
