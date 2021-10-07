@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\agenda;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class AgendaController extends Controller
@@ -17,10 +18,14 @@ class AgendaController extends Controller
         $Citas =[];
        /*  dd($agenda); */
        foreach($agenda as $item){
+        /* $date = Carbon::parse('2018-06-15 12:34:00', 'UTC'); */
+        $nueva= $item->fecha_consulta." ".$item->hora_consulta;
+       /*  $date2= Carbon::create($item->fecha_consulta,$item->hora_consulta); */
         $aux = array(
             'id'=>$item->id,
             'title'=>$item->paciente,
-            'start'=>$item->fecha_consulta,
+          /*   'start'=>$item->fecha_consulta, */
+            'start'=>$nueva,
             'hora_consulta'=>$item->hora_consulta,
             'aseguradora'=>$item->aseguradora,
             'telefono1'=>$item->telefono1,
@@ -29,7 +34,9 @@ class AgendaController extends Controller
             'costoConsulta'=>$item->costoConsulta,
             'recado'=>$item->recado,
             'edad'=>$item->edad,
-            'comoSeEntero'=>$item->comoSeEntero
+            'comoSeEntero'=>$item->comoSeEntero,
+            'allDay'=>false,
+            'completa'=> $nueva
 
         );
 
