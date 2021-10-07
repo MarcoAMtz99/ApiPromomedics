@@ -15,6 +15,9 @@ class ConsultorioController extends Controller
     public function index()
     {
         //
+        $consultorio = consultorio::all();
+        /*  dd( $agenda,$id); */
+        return json_encode($consultorio);
     }
 
     /**
@@ -47,6 +50,9 @@ class ConsultorioController extends Controller
     public function show($id)
     {
         //
+        $consultorio = consultorio::where('id_medico',$id)->get();
+        /*  dd( $agenda,$id); */
+        return json_encode($consultorio);
     }
 
     /**
