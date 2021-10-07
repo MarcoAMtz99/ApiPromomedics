@@ -15,6 +15,7 @@ class AgendaController extends Controller
     {     
         $agenda = Agenda::all();
         $Citas =[];
+       /*  dd($agenda); */
        foreach($agenda as $item){
         $aux = array(
             'id'=>$item->id,
@@ -31,10 +32,13 @@ class AgendaController extends Controller
             'comoSeEntero'=>$item->comoSeEntero
 
         );
+
         array_push($Citas,$aux);
-        return json_encode($Citas);
-        /* response()->json([ 'medicos' => $agenda], 200); */
-            }
+        }
+        
+         return json_encode($Citas); 
+       
+           
     }
 
     /**
