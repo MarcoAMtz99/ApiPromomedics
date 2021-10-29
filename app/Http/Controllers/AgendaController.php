@@ -70,12 +70,12 @@ class AgendaController extends Controller
         //
      /*    dd($request,$request->data["paciente"]); */
         $PACIENTE = Paciente::where('id_paciente',$request->data["paciente"])->get();
-        dd($PACIENTE);
+        return json_encode( $PACIENTE ) ; 
         $nombre = $PACIENTE->nombre + ' '+$PACIENTE->paterno+' '+$PACIENTE->materno;
         $Fecha = Carbon::now();
         $CITA = new Agenda();
         $aux= $request->data["hora"].":00";
-        /* return json_encode( $request->data ) ; */
+        
         $CITA->id_medico = $request->data["medico"];
         $CITA->status = 1;
         $CITA->fechaCreacion =  $Fecha;
