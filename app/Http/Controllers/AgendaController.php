@@ -168,7 +168,7 @@ class AgendaController extends Controller
     {
         //
        /*  $agenda = Agenda::all(); */
-       $CITA = Agenda::findOrFail($request->data["id_cita"]);
+       $CITA = Agenda::where('ID',$request->data["id_cita"])->get();
         
        $CITA->edad =$request->data["id_cita"];
        $CITA->recado=$request->data["recado"];
@@ -176,12 +176,11 @@ class AgendaController extends Controller
        $CITA->telefono1=$request->data["telefono1"];
        $CITA->telefono2=$request->data["telefono2"];
        $CITA->telefono3=$request->data["telefono3"];
-
-        $CITA->save();
+       $CITA->save();
     
 
   
-        return   json_encode( array('msg'=>"se actualizo correctamente") ) ;;
+        return   json_encode( array('msg'=>"se actualizo correctamente",$CITA) ) ;;
     }
 
 
