@@ -169,21 +169,21 @@ class AgendaController extends Controller
         //
        /*  $agenda = Agenda::all(); */
        $CITA = Agenda::where('ID',$request->data["id_cita"])->firstOrFail();
-        /* $CITA->update([
+        $CITA->update([
             'edad'=>$request->data["edad"],
             'recado'=>$request->data["recado"],
             'costoConsulta'=>$request->data["costo"],
             'telefono1'=>$request->data["telefono1"],
             'telefono2'=>$request->data["telefono2"],
             'telefono3'=>$request->data["telefono3"],
-        ]); */
-       $CITA->edad =$request->data["edad"];
+        ]);
+     /*   $CITA->edad = $request->data["edad"];
        $CITA->recado=$request->data["recado"];
        $CITA->costoConsulta=$request->data["costo"];
        $CITA->telefono1=$request->data["telefono1"];
        $CITA->telefono2=$request->data["telefono2"];
        $CITA->telefono3=$request->data["telefono3"];
-       $CITA->save();
+       $CITA->save(); */
     
 
   
