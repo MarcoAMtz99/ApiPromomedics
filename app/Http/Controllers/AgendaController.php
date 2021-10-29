@@ -167,7 +167,23 @@ class AgendaController extends Controller
     public function update(Request $request, $id)
     {
         //
+       /*  $agenda = Agenda::all(); */
+       $CITA = Agenda::findOrFail($request->data["id_cita"]);
+        
+       $CITA->edad =$request->data["id_cita"];
+       $CITA->recado=$request->data["recado"];
+       $CITA->costoConsulta=$request->data["costo"];
+       $CITA->telefono1=$request->data["telefono1"];
+       $CITA->telefono2=$request->data["telefono2"];
+       $CITA->telefono3=$request->data["telefono3"];
+
+        $CITA->save();
+    
+
+  
+        return   json_encode( array('msg'=>"se actualizo correctamente") ) ;;
     }
+
 
     /**
      * Remove the specified resource from storage.

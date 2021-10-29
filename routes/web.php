@@ -9,6 +9,8 @@ Route::resource('/medico','MedicoController');
 Route::resource('/consultorio','ConsultorioController');
 Route::resource('/paciente','PacienteController');
 
+
+
 /* Auth::routes(); */
 
 /* Route::get('/', 'HomeController@index')->name('home');
