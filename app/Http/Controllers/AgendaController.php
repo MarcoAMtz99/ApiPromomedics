@@ -69,9 +69,11 @@ class AgendaController extends Controller
     {
         //
      /*    dd($request,$request->data["paciente"]); */
-        $PACIENTE = Paciente::where('id_paciente',$request->data["paciente"])->get();
+        $PACIENTE_NOMBRE = Paciente::where('id_paciente',$request->data["paciente"])->value('nombre');
+        $PACIENTE_PATERNO = Paciente::where('id_paciente',$request->data["paciente"])->value('paterno');
+        $PACIENTE_MATERNO = Paciente::where('id_paciente',$request->data["paciente"])->value('materno');
        
-        $nombre = $PACIENTE->nombre.' '.$PACIENTE->paterno.' '.$PACIENTE->materno;
+        $nombre = $PACIENTE_NOMBRE.' '.$PACIENTE_PATERNO.' '.$PACIENTE_MATERNO;
         return json_encode( $nombre ) ; 
         $Fecha = Carbon::now();
         $CITA = new Agenda();
