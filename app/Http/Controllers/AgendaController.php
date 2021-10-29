@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\agenda;
+use App\Paciente;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -67,7 +68,7 @@ class AgendaController extends Controller
     public function store(Request $request)
     {
         //
-        
+        $PACIENTE = Paciente::FindOrDFail($request->data["paciente"]);
         $Fecha = Carbon::now();
         $CITA = new Agenda();
         $aux= $request->data["hora"].":00";
@@ -79,7 +80,7 @@ class AgendaController extends Controller
         $CITA->usuarioCreacionId = 1;
         $CITA->usuarioActualizacionId = 1;
         $CITA->id_consultorio = $request->data["consultorio"];
-        $CITA->paciente = $request->data["paciente"];
+        $CITA->paciente =  $PACIENTE;
         $CITA->fecha_consulta = $request->data["fecha"];
         $CITA->hora_consulta = $aux;
         $CITA->aseguradora = 'GNP';

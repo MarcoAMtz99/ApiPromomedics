@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::resource('/agenda','AgendaController');
 Route::resource('/medico','MedicoController');
 Route::resource('/consultorio','ConsultorioController');
+Route::resource('/paciente','PacienteController');
 
 /* Auth::routes(); */
 
