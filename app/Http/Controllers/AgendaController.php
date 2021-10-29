@@ -23,7 +23,7 @@ class AgendaController extends Controller
         $nueva= $item->fecha_consulta." ".$item->hora_consulta;
        /*  $date2= Carbon::create($item->fecha_consulta,$item->hora_consulta); */
         $aux = array(
-            'id'=>$item->id,
+            'id'=>$item->ID,
             'title'=>$item->paciente,
           /*   'start'=>$item->fecha_consulta, */
             'start'=>$nueva,
