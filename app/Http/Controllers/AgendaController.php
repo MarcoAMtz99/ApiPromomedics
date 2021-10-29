@@ -68,7 +68,9 @@ class AgendaController extends Controller
     public function store(Request $request)
     {
         //
+     /*    dd($request,$request->data["paciente"]); */
         $PACIENTE = Paciente::where('id_paciente',$request->data["paciente"])->get();
+        /* dd($PACIENTE); */
         $nombre = $PACIENTE->nombre + ' '+$PACIENTE->paterno+' '+$PACIENTE->materno;
         $Fecha = Carbon::now();
         $CITA = new Agenda();
