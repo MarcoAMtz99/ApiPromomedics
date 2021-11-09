@@ -201,11 +201,11 @@ class AgendaController extends Controller
     {
  
         $aux = $request->data["id_cita"];
-      $CITA2 = Agenda::findOrFail($aux);
+      $CITA2 = Agenda::findOrFail(1);
       Agenda::findOrFail($aux)->update([
       "costoConsulta"=>$request->data["costo"] 
     ]);
-    $CITA2->costoConsulta = $request->data["costo"];
+    $CITA2->costoConsulta = 1000;
     $CITA2->save();
 
 
