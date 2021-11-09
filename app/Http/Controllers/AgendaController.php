@@ -202,13 +202,22 @@ class AgendaController extends Controller
     {
  
        /*  $aux = $request->data["id_cita"]; */
-      $CITA2 = Agenda::find(4);
-      Agenda::where('ID',4)->update(["costoConsulta"=>$request->data["costo"]]);
-      Agenda::where('ID',5)->update(["costoConsulta"=>$request->data["costo"]]);
+     /*  $CITA2 = Agenda::find(4); */
+      Agenda::where('ID',$id)->update([
+          
+      "costoConsulta"=>$request->data["costo"],
+      'edad'=>$request->data["edad"],
+      'recado'=>$request->data["recado"]
+      
+     /*  'telefono1'=>$request->data["telefono1"],
+      'telefono2'=>$request->data["telefono2"],
+      'telefono3'=>$request->data["telefono3"] */
+        ]);
+      /* Agenda::where('ID',5)->update(["costoConsulta"=>$request->data["costo"]]); */
       /* Agenda::findOrFail($aux)->update([
       "costoConsulta"=>$request->data["costo"] 
     ]); */
-    $CITA2->costoConsulta = "1000";
+  /*   $CITA2->costoConsulta = "1000";
     $CITA2->save();
     $CITA2->save();
     $CITA2->save();
@@ -216,7 +225,7 @@ class AgendaController extends Controller
 
     $CITA2->save();
     $CITA2->save();
-    $CITA2->save();
+    $CITA2->save(); */
 
 
   
