@@ -10,7 +10,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 /* AGENDA */
 Route::get('/agenda',"AgendaController@index");
 Route::post('/agenda',"AgendaController@store");
-Route::post('agenda/{id}','AgendaController@update');
+Route::post('/agenda/{id}','AgendaController@update');
+
 /* MEDICOS */
 Route::get('/medico',"MedicoController@index");
 /* CONSULTORIOS */
