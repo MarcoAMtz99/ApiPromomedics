@@ -203,8 +203,8 @@ class AgendaController extends Controller
  
        /*  $aux = $request->data["id_cita"]; */
       $CITA2 = Agenda::find(4);
-      Agenda::where('ID',4)->update(["costoConsulta"=>'9899']);
-      Agenda::where('ID',5)->update(["costoConsulta"=>'19899']);
+      Agenda::where('ID',4)->update(["costoConsulta"=>$request->data["costo"]]);
+      Agenda::where('ID',5)->update(["costoConsulta"=>$request->data["costo"]]);
       /* Agenda::findOrFail($aux)->update([
       "costoConsulta"=>$request->data["costo"] 
     ]); */
