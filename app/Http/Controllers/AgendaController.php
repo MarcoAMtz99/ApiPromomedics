@@ -167,8 +167,8 @@ class AgendaController extends Controller
     public function update(Request $request, $id)
     {
         //
-        dd($request);
-       /*  $agenda = Agenda::all(); */
+        dd($id);
+       
        $CITA = Agenda::where('ID',$id)->firstOrFail();
      /*   $CITA->edad = 99; */
        /*  $CITA->update([
