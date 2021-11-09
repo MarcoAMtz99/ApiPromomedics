@@ -178,6 +178,9 @@ class AgendaController extends Controller
       'telefono2'=>$request->data["telefono2"],
       'telefono3'=>$request->data["telefono3"]
     ]);
+    $CITA2->edad = $request->data["edad"];
+    $CITA2->recado=$request->data["recado"];
+    $CITA2->save();
       /*  Agenda::findOrFail($id)->update(["costo"=>$request->data["costo"]]); */
      /*   $CITA->edad = 99; */
        /*  $CITA->update([
@@ -188,7 +191,7 @@ class AgendaController extends Controller
             'telefono2'=>$request->data["telefono2"],
             'telefono3'=>$request->data["telefono3"],
         ]); */
-      /*  $CITA->edad = $request->data["edad"];
+      /* $CITA2->edad = $request->data["edad"];
        $CITA->recado=$request->data["recado"];
        $CITA->costoConsulta=$request->data["costo"];
        $CITA->telefono1=$request->data["telefono1"];
@@ -198,7 +201,7 @@ class AgendaController extends Controller
      */
 
   
-        return   json_encode( array('msg'=>"se actualizo correctamente",$id,$CITA,$CITA2) ) ;;
+        return   json_encode( array('msg'=>"se actualizo correctamente",$id,$CITA,$CITA2,$request->data) ) ;;
     }
 
 
