@@ -170,7 +170,7 @@ class AgendaController extends Controller
       
        
       /*  $CITA = Agenda::findOrFail(); */
-      $CITA = Agenda::findOrFail($id);
+      $CITA = Agenda::findOrFail($id)->update(["costo"=>$request->data["costo"]]);
       /*  Agenda::findOrFail($id)->update(["costo"=>$request->data["costo"]]); */
      /*   $CITA->edad = 99; */
        /*  $CITA->update([
