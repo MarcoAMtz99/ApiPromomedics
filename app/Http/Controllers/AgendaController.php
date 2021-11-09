@@ -197,6 +197,21 @@ class AgendaController extends Controller
   
         return   json_encode( array('msg'=>"se actualizo correctamente",$id,$CITA2,$request->data) ) ;
     }
+    public function actualizarCita(Request $request, $id)
+    {
+ 
+        $aux = $request->data["id_cita"];
+      $CITA2 = Agenda::findOrFail($aux);
+      Agenda::findOrFail($aux)->update([
+      "costoConsulta"=>$request->data["costo"] 
+    ]);
+    $CITA2->costoConsulta = $request->data["costo"];
+    $CITA2->save();
+
+
+  
+        return   json_encode( array('msg'=>"se actualizo correctamente",$id,$CITA2,$request->data) ) ;
+    }
 
 
     /**
