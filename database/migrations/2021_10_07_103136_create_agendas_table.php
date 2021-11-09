@@ -15,6 +15,33 @@ class CreateAgendasTable extends Migration
     {
         Schema::create('agendas', function (Blueprint $table) {
             $table->id();
+            $table->('id_medico'),
+            $table->('status'),
+            $table->('fechaCreacion'),
+            $table->('fechaActualizacion'),
+            $table->('usuarioCreacionId'),
+            $table->('usuarioActualizacionId'),
+            $table->('id_consultorio'),
+            $table->('paciente'),
+            $table->('fecha_consulta'),
+            $table->('hora_consulta'),
+            $table->('aseguradora'),
+            $table->('mail'),
+            $table->('telefono1'),
+            $table->('telefono2'),
+            $table->('telefono3'),
+            $table->('consultaPrimeraVez'),
+            $table->('consultaSubsecuente'),
+            $table->('consultaPreferencial1'),
+            $table->('consultaPreferencial2'),
+            $table->('consultaRevision'),
+            $table->('consultaEstudios'),
+            $table->('consultaUrgencia'),
+            $table->('costoConsulta'),
+            $table->('recado'),
+            $table->('comoSeEntero'),
+            $table->('edad'),
+            $table->('tutor')
             $table->timestamps();
         });
     }

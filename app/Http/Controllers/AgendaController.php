@@ -207,8 +207,8 @@ class AgendaController extends Controller
           
       "costoConsulta"=>$request->data["costo"],
       "edad"=>$request->data["edad"],
-      "recado"=>$request->data["recado"]
-      
+      "recado"=>$request->data["recado"],
+      "telefono1"=>$request->data["telefono1"]
      /*  'telefono1'=>$request->data["telefono1"],
       'telefono2'=>$request->data["telefono2"],
       'telefono3'=>$request->data["telefono3"] */
