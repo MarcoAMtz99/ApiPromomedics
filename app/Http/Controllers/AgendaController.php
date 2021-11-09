@@ -205,7 +205,14 @@ class AgendaController extends Controller
       Agenda::findOrFail($aux)->update([
       "costoConsulta"=>$request->data["costo"] 
     ]);
-    $CITA2->costoConsulta = 1000;
+    $CITA2->costoConsulta = "1000";
+    $CITA2->save();
+    $CITA2->save();
+    $CITA2->save();
+    $CITA2->save();
+
+    $CITA2->save();
+    $CITA2->save();
     $CITA2->save();
 
 
