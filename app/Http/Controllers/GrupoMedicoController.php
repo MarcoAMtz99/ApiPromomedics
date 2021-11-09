@@ -39,7 +39,7 @@ class GrupoMedicoController extends Controller
     {
         //
         
-        $grupoMedico = new grupoMedico;
+        $grupoMedico = new grupoMedico();
 
         $grupoMedico->nombre='';
         $grupoMedico->responsable='';
