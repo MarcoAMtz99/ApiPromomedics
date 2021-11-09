@@ -171,15 +171,9 @@ class AgendaController extends Controller
         $aux = $request->data["id_cita"];
       $CITA2 = Agenda::findOrFail($aux);
       Agenda::findOrFail($aux)->update([
-      "costoConsulta"=>$request->data["costo"] ,
-      "recado"=>$request->data["recado"],
-      "edad"=>$request->data["edad"],
-      'telefono1'=>$request->data["telefono1"],
-      'telefono2'=>$request->data["telefono2"],
-      'telefono3'=>$request->data["telefono3"]
+      "costoConsulta"=>$request->data["costo"] 
     ]);
-    $CITA2->edad = $request->data["edad"];
-    $CITA2->recado=$request->data["recado"];
+    $CITA2->costoConsulta = $request->data["costo"];
     $CITA2->save();
       /*  Agenda::findOrFail($id)->update(["costo"=>$request->data["costo"]]); */
      /*   $CITA->edad = 99; */
