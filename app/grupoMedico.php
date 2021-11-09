@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class grupoMedico extends Model
 {
     //
-    protected $timestamps = false;
+    /* protected $timestamps = false; */
      protected $table ='grupo_medico'; 
     protected $fillable = [
         'ID',
@@ -21,6 +21,8 @@ class grupoMedico extends Model
         ' num_medicos',
         ' giro',
         ' slogan',
-        ' status'        
+        ' status',
+        'updated_at',
+        'created_at'        
     ];
 }
