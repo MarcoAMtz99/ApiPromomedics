@@ -168,9 +168,9 @@ class AgendaController extends Controller
     {
         //
       
-       
-      $CITA2 = Agenda::findOrFail($id);
-      $CITA = Agenda::findOrFail(53)->update([
+        $aux = $request->data["id_cita"];
+      $CITA2 = Agenda::findOrFail($aux);
+      Agenda::findOrFail($aux)->update([
       "costoConsulta"=>$request->data["costo"] ,
       "recado"=>$request->data["recado"],
       "edad"=>$request->data["edad"],
@@ -201,7 +201,7 @@ class AgendaController extends Controller
      */
 
   
-        return   json_encode( array('msg'=>"se actualizo correctamente",$id,$CITA,$CITA2,$request->data) ) ;;
+        return   json_encode( array('msg'=>"se actualizo correctamente",$id,$CITA2,$request->data) ) ;
     }
 
 
