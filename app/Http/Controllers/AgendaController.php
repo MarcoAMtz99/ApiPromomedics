@@ -210,7 +210,7 @@ class AgendaController extends Controller
 
 
   
-        return   json_encode( array('msg'=>"se actualizo correctamente",$id,$CITA2,$request->data) ) ;
+        return   json_encode( array('msg'=>"se actualizo correctamente",$id,$CITA2,$request->data["costo"]) ) ;
     }
 
 
