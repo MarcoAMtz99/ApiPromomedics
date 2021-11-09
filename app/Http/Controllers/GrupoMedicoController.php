@@ -40,7 +40,7 @@ class GrupoMedicoController extends Controller
     public function store(Request $request)
     {
         //
-        return json_encode( array($request->data) ) ;
+        return json_encode( array($request->data["nombre"]) ) ;
         $grupoMedico = new grupoMedico();
         $Fecha = Carbon::now();
         $grupoMedico->nombre=$request->data["nombre"];
