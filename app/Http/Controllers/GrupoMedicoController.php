@@ -41,24 +41,38 @@ class GrupoMedicoController extends Controller
     {
         //
         
-       /*  $grupoMedico = new grupoMedico(); */
-     /*    $Fecha = Carbon::now();
+         $grupoMedico = new grupoMedico(); 
+         $Fecha = Carbon::now();
         $grupoMedico->nombre=$request->data["nombre"];
-        $grupoMedico->responsable=$request->data["apellido"];
-        $grupoMedico->estado=$request->data["sexo"];
+        $grupoMedico->responsable=$request->data["responsable"];
+        $grupoMedico->estado=$request->data["estado"];
         $grupoMedico->telefono=$request->data["celular"];
         $grupoMedico->fotografia="";
         $grupoMedico->otro_telefono=$request->data["celular"];
         $grupoMedico->celular=$request->data["celular"];
         $grupoMedico->num_medicos=0;
-        $grupoMedico->giro=$request->data["mat"];
+        $grupoMedico->giro=$request->data["giro"];
         $grupoMedico->slogan=$request->data["responsable"];
         $grupoMedico->status=1;
-        /* $grupoMedico->updated_at=$Fecha;
-        $grupoMedico->created_at=$Fecha; */ 
+         $grupoMedico->updated_at=$Fecha;
+        $grupoMedico->created_at=$Fecha; 
 
-       /*  $grupoMedico->save(); */
-        return json_encode( array('msg'=>"se guardo correctamente",$request->data) ) ;
+       /*  $grupoMedico->nombre="GRUPO PRUEBA";
+        $grupoMedico->responsable="MARTINEZ";
+        $grupoMedico->estado="CDMX";
+        $grupoMedico->telefono="5577788451";
+        $grupoMedico->fotografia="";
+        $grupoMedico->otro_telefono="5577788451";
+        $grupoMedico->celular="5577788451";
+        $grupoMedico->num_medicos=0;
+        $grupoMedico->giro="OFTALMO";
+        $grupoMedico->slogan="PRUEBA";
+        $grupoMedico->status=1;
+         $grupoMedico->updated_at=$Fecha;
+        $grupoMedico->created_at=$Fecha; */
+
+         $grupoMedico->save(); 
+        return json_encode( array('msg'=>"se guardo correctamente",$request->data,$grupoMedico) ) ;
     }
 
     /**
