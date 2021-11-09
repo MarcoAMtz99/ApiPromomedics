@@ -55,7 +55,7 @@ class GrupoMedicoController extends Controller
         $grupoMedico->slogan=$request->data["responsable"];
         $grupoMedico->status=1;
 
-        $grupoMedico-save();
+        $grupoMedico->save();
         return json_encode( array('msg'=>"se guardo correctamente",$request->data) ) ;
     }
 
