@@ -42,7 +42,7 @@ class GrupoMedicoController extends Controller
         //
         
         $grupoMedico = new grupoMedico();
-
+        $Fecha = Carbon::now();
         $grupoMedico->nombre=$request->data["nombre"];
         $grupoMedico->responsable=$request->data["apellido"];
         $grupoMedico->estado=$request->data["sexo"];
@@ -54,6 +54,8 @@ class GrupoMedicoController extends Controller
         $grupoMedico->giro=$request->data["mat"];
         $grupoMedico->slogan=$request->data["responsable"];
         $grupoMedico->status=1;
+        $grupoMedico->updated_at=$Fecha;
+        $grupoMedico->created_at=$Fecha;
 
         $grupoMedico->save();
         return json_encode( array('msg'=>"se guardo correctamente",$request->data) ) ;
