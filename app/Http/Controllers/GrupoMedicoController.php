@@ -17,6 +17,8 @@ class GrupoMedicoController extends Controller
     public function index()
     {
         //
+        $grupoMedico = grupoMedico::all();
+        return json_encode($grupoMedico); 
     }
 
     /**
@@ -41,19 +43,20 @@ class GrupoMedicoController extends Controller
         
         $grupoMedico = new grupoMedico();
 
-        $grupoMedico->nombre='';
-        $grupoMedico->responsable='';
-        $grupoMedico->estado='';
-        $grupoMedico->telefono='';
-        $grupoMedico->fotografia='';
-        $grupoMedico->otro_telefono='';
-        $grupoMedico->celular='';
-        $grupoMedico->num_medicos='';
-        $grupoMedico->giro='';
-        $grupoMedico->slogan='';
-        $grupoMedico->status='';
+        $grupoMedico->nombre=$request->data["nombre"];
+        $grupoMedico->responsable=$request->data["apellido"];
+        $grupoMedico->estado=$request->data["sexo"];
+        $grupoMedico->telefono=$request->data["celular"];
+        $grupoMedico->fotografia="";
+        $grupoMedico->otro_telefono=$request->data["celular"];
+        $grupoMedico->celular=$request->data["celular"];
+        $grupoMedico->num_medicos=0;
+        $grupoMedico->giro=$request->data["mat"];
+        $grupoMedico->slogan=$request->data["responsable"];
+        $grupoMedico->status=1;
 
-        $grupoMedico-save();
+       /*  $grupoMedico-save(); */
+        return json_encode( array('msg'=>"se guardo correctamente",$request->data) ) ;
     }
 
     /**

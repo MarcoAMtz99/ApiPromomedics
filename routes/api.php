@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 }); */
-Route::resource('agendas', 'AgendaController');
+
 /* AGENDA */
 Route::get('/agenda',"AgendaController@index");
 Route::post('/agenda',"AgendaController@store");
@@ -20,3 +20,6 @@ Route::get('/medico',"MedicoController@index");
 Route::get('/consultorio/{id}',"ConsultorioController@show");
 /* PACIENTES */
 Route::get('/paciente',"PacienteController@index");
+/* GRUPO MEDICO */
+Route::post('/grupomedico','GrupoMedicoController@store');
+Route::get('/grupomedico','GrupoMedicoController@index');
